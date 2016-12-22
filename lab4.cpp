@@ -15,136 +15,135 @@ public:
 		return 0;
 	}
 };
-class TwoDimensionalFigures : public GeometricFigures
-{
-public:
-	virtual double Square()
+	class TwoDimensionalFigures : public GeometricFigures
 	{
-		return 0;
-	}
-	virtual int InputSpecifications()
+	public:
+		virtual double Square()
+		{
+			return 0;
+		}
+		virtual int InputSpecifications()
+		{
+			return 0;
+		}
+	};
+		class  Circle : public TwoDimensionalFigures
+		{
+		public:
+			int InputSpecifications()
+			{
+				cout << "Enter radius: ";
+				cin >> radius;
+				return 0;
+			}
+			double Square()
+			{
+				return 3.14*radius*radius;
+			}
+		private:
+			int radius;
+		};
+		class Triangle : public TwoDimensionalFigures
+		{
+		public:
+			int InputSpecifications()
+			{
+				cout << "Enter side: ";
+				cin >> side;
+				cout << "Enter height: ";
+				cin >> height;
+				return 0;
+			}
+			double Square()
+			{
+				return 0.5*side*height;
+			}
+		private:
+			int side, height;
+		};
+	class ThreeDimensionalFigures : public GeometricFigures
 	{
-		return 0;
-	}
-};
-class  Circle : public TwoDimensionalFigures
-{
-public:
-	int InputSpecifications()
-	{
-		cout << "Enter radius: ";
-		cin >> r;
-		return 0;
-	}
-	double Square()
-	{
-		return 3.14*r*r;
-	}
-private:
-	int r;
-};
-class Triangle : public TwoDimensionalFigures
-{
-public:
-	int InputSpecifications()
-	{
-		cout << "Enter side: ";
-		cin >> a;
-		cout << "Enter height: ";
-		cin >> h;
-		return 0;
-	}
-	double Square()
-	{
-		return 0.5*a*h;
-	}
-private:
-	int a, h;
-};
-class ThreeDimensionalFigures : public GeometricFigures
-{
-public:
-	virtual int InputSpecifications()
-	{
-		return 0;
-	}
-	virtual double Square()
-	{
-		return 0;
-	}
-	virtual double Volume()
-	{
-		return 0;
-	}
-};
+	public:
+		virtual int InputSpecifications()
+		{
+			return 0;
+		}
+		virtual double Square()
+		{
+			return 0;
+		}
+		virtual double Volume()
+		{
+			return 0;
+		}
+	};
+		class Cylinder : public ThreeDimensionalFigures
+		{
+		public:
+			int InputSpecifications()
+			{
+				cout << "Enter radius: ";
+				cin >> radius;
+				cout << "Enter height: ";
+				cin >> height;
+				return 0;
+			}
+			double Square()
+			{
+				return 3.14*radius*radius;
+			}
+			double Volume()
+			{
+				return 3.14*radius*radius*height;
+			}
+		private:
+			int radius, height;
+		};
 
-class Cylinder : public ThreeDimensionalFigures
-{
-public:
-	int InputSpecifications()
-	{
-		cout << "Enter radius: ";
-		cin >> r;
-		cout << "Enter height: ";
-		cin >> h;
-		return 0;
-	}
-	double Square()
-	{
-		return 3.14*r*r;
-	}
-	double Volume()
-	{
-		return 3.14*r*r*h;
-	}
-private:
-	int r, h;
-};
+		class Sphere : public ThreeDimensionalFigures
+		{
+		public:
+			int InputSpecifications()
+			{
+				cout << "Enter radius: ";
+				cin >> radius;
+				return 0;
+			}
+			double Square()
+			{
+				return 4 * 3.14*radius*radius;
+			}
 
-class Sphere : public ThreeDimensionalFigures
-{
-public:
-	int InputSpecifications()
-	{
-		cout << "Enter radius: ";
-		cin >> r;
-		return 0;
-	}
-	double Square()
-	{
-		return 4 * 3.14*r*r;
-	}
+			double Volume()
+			{
+				return 4 / 3 * 3.14*radius*radius*radius;
+			}
+		private:
+			int radius;
+		};
 
-	double Volume()
-	{
-		return 4 / 3 * 3.14*r*r*r;
-	}
-private:
-	int r;
-};
-
-class Cone : public ThreeDimensionalFigures
-{
-public:
-	int InputSpecifications()
-	{
-		cout << "Enter radius: ";
-		cin >> r;
-		cout << "Enter height: ";
-		cin >> h;
-		return 0;
-	}
-	double Square()
-	{
-		return 3.14*r*r;
-	}
-	double Volume()
-	{
-		return 3.14 / 3 * r*r*h;
-	}
-private:
-	int r, h;
-};
+		class Cone : public ThreeDimensionalFigures
+		{
+		public:
+			int InputSpecifications()
+			{
+				cout << "Enter radius: ";
+				cin >> radius;
+				cout << "Enter height: ";
+				cin >> height;
+				return 0;
+			}
+			double Square()
+			{
+				return 3.14*radius*radius;
+			}
+			double Volume()
+			{
+				return 3.14 / 3 * radius*radius*height;
+			}
+		private:
+			int radius, height;
+		};
 
 int main()
 {
